@@ -2,7 +2,7 @@ document.getElementById("multiplicationForm").addEventListener("submit", functio
     event.preventDefault();
 
     const minRow = parseInt(document.getElementById("minRow").value);
-    const maxRow = parseInt(document.getElementById("minRow").value);
+    const maxRow = parseInt(document.getElementById("maxRow").value);
     const minColumn = parseInt(document.getElementById("minColumn").value);
     const maxColumn = parseInt(document.getElementById("maxColumn").value);
 
