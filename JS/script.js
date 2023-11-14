@@ -15,6 +15,11 @@ document.getElementById("multiplicationForm").addEventListener("submit", functio
         showError("Please enter numbers between -50 and 50.")
         return;
     }
+
+    if (minRow > maxRow || minColumn > maxColumn) {
+        showError("The minimum value should not exceed the maximum value.")
+        return;
+    }
     
     generateTable(minRow, maxRow, minColumn, maxColumn);
 });
