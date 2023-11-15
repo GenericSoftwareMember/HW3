@@ -6,18 +6,24 @@ document.getElementById("multiplicationForm").addEventListener("submit", functio
     const minColumn = parseInt(document.getElementById("minColumn").value);
     const maxColumn = parseInt(document.getElementById("maxColumn").value);
 
+    const errorMessageElement = document.getElementById("errorMessage");
+    errorMessageElement.textContent = "";
+
     if (isNaN(minRow) || isNaN(maxRow) || isNaN(minColumn) || isNaN(maxColumn)) {
-        showError("Invalid input. Please enter valid numbers.");
+        displayError("errorMessage", "Invalid input. Please enter valid numbers.");
+        event.preventDefault();
         return;
     }
 
     if (minRow < -50 || maxRow > 50 || minColumn < -50 || maxColumn > 50) {
-        showError("Please enter numbers between -50 and 50.")
+        displayError("errorMessage", "Please enter numbers between -50 and 50.");
+        event.preventDefault();
         return;
     }
 
     if (minRow > maxRow || minColumn > maxColumn) {
-        showError("The minimum value should not exceed the maximum value.")
+        displayError("errorMessage", "The minimum value should not exceed the maximum value.");
+        event.preventDefault();
         return;
     }
     
@@ -60,6 +66,7 @@ function generateTable(minRow, maxRow, minColumn, maxColumn) {
     tableContainer.appendChild(table);
 }
 
-function showError(message) {
-    alert(message);
+function displayError(elementId, message) {
+    const errorMessageElement = document.getElementById(elementId);
+    errorMessageElement.textContent = message;
 }

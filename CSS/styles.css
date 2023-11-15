@@ -24,18 +24,39 @@ input[type = "number"], input[type = "submit"] {
     border-radius: 4px;
 }
 
+input[type = "submit"]:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
 table {
     border-collapse: collapse;
     width: 100%;
+    margin-top: 20px;
 }
 
 table, th, td {
     border: 1px solid black;
+    padding: 10px;
+    text-align: center;
 }
 
 th, td {
     padding: 10px;
     text-align: center;
+}
+
+th {
+    background-color: darkgrey;
+}
+
+tr:nth-child(even) {
+    background-color: ivory;
 }
 
 .scrollable-container {
